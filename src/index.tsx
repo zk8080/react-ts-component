@@ -1,6 +1,14 @@
+/*
+ * @Author: your name
+ * @Date: 2021-01-24 13:13:34
+ * @LastEditTime: 2021-01-24 21:07:09
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: /vikingship/src/index.tsx
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
