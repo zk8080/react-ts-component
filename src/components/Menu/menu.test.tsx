@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-31 16:14:20
- * @LastEditTime: 2021-01-31 16:44:08
+ * @LastEditTime: 2021-03-01 22:30:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vikingship/src/components/Menu/menu.test.tsx
@@ -23,13 +23,13 @@ const testVerProps: MenuProps = {
 const generateMenu = (props: MenuProps) => {
   return (
     <Menu {...props}>
-      <MenuItem index={0}>
+      <MenuItem>
         active
       </MenuItem>
-      <MenuItem index={1} disabled>
+      <MenuItem disabled>
         disabled
       </MenuItem>
-      <MenuItem index={2}>
+      <MenuItem>
         xyz
       </MenuItem>
     </Menu>

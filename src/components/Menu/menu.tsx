@@ -1,13 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2021-01-31 15:16:16
- * @LastEditTime: 2021-01-31 16:42:30
+ * @LastEditTime: 2021-03-01 22:44:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vikingship/src/components/Menu/menu.tsx
  */
 import React, { createContext, useState } from 'react';
 import classNames from 'classnames';
+import { MenuItemProps } from './menuItem';
 
 type MenuMode = 'horizontal' | 'vertical';
 type SelectCallback = (selectedIndex: number) => void;
@@ -31,7 +32,8 @@ const Menu: React.FC<MenuProps> = (props) => {
   const { className, mode, defaultIndex, style, onSelect, children } = props;
   const [ currentActive, setActive ] = useState(defaultIndex);
   const classes = classNames('viking-menu', className, {
-    'menu-vertical': mode === 'vertical'
+    'menu-vertical': mode === 'vertical',
+    'menu-horizontal': mode !== 'vertical'
   })
 
   const handleClick = (index: number) => {
@@ -44,11 +46,25 @@ const Menu: React.FC<MenuProps> = (props) => {
     index: currentActive ? currentActive : 0,
     onSelect: handleClick
   }
+
+  const renderChildren = () => {
+    return React.Children.map(children, (child, index) => {
+      const childElement = child as React.FunctionComponentElement<MenuItemProps>;
+      const { displayName } = childElement.type;
+      if(displayName === 'MenuItem' || displayName === 'SubMenuItem'){
+        return React.cloneElement(childElement, {
+          index
+        });
+      }else{
+        console.error('Warning: Menu has a child which is not a MenuItem component');
+      }
+    })
+  }
   
   return (
     <ul className={classes} style={style} data-testid="test-menu">
       <MenuContext.Provider value={passedContext}>
-        {children}
+        {renderChildren()}
       </MenuContext.Provider>
       
     </ul>
