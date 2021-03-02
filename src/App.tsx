@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-24 13:13:34
- * @LastEditTime: 2021-03-01 22:47:13
+ * @LastEditTime: 2021-03-02 22:03:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vikingship/src/App.tsx
@@ -16,10 +16,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Menu defaultIndex={0}>
-          <MenuItem index={0}>menu</MenuItem>
-          <MenuItem index={1} disabled>menu1</MenuItem>
-          <MenuItem index={2}>menu2</MenuItem>
+        <Menu defaultIndex={'0'} mode="vertical" defaultOpenSubMenus={['3']}>
+          <MenuItem>menu</MenuItem>
+          <MenuItem disabled>menu1</MenuItem>
+          <MenuItem>menu2</MenuItem>
           <SubMenuItem title="drop">
             <MenuItem>test1</MenuItem>
             <MenuItem>test2</MenuItem>
