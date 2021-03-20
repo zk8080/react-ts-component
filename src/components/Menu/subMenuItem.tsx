@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-01 22:32:11
- * @LastEditTime: 2021-03-02 22:03:15
+ * @LastEditTime: 2021-03-20 21:43:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vikingship/src/components/Menu/subMenuItem.tsx
@@ -10,6 +10,7 @@ import React, { FC, useContext, FunctionComponentElement, useState } from 'react
 import classNames from 'classnames';
 import { MenuContext } from './menu';
 import { MenuItemProps } from './menuItem';
+import Icon from '../Icon/icon';
 
 export interface SubMenuItemProps {
   index?: string;
@@ -25,7 +26,9 @@ const SubMenuItem: FC<SubMenuItemProps> = (props) => {
   const isOpend = (index && mode === 'vertical') ? defaultOpens.includes(index) : false;
   const [ menuOpen, setMenuOpen ] = useState(isOpend);
   const classes = classNames('menu-item submenu-item', className, {
-    'is-active': context.index === index
+    'is-active': context.index === index,
+    'is-opened': menuOpen,
+    'is-vertical': mode === 'vertical',
   });
 
   const handleClick = (e: React.MouseEvent) => {
@@ -73,6 +76,7 @@ const SubMenuItem: FC<SubMenuItemProps> = (props) => {
     <li key={index} className={classes} {...hoverEvents}>
       <div className="submenu-title" {...clickEvents}>
         {title}
+        <Icon icon="angle-down" className="arrow-icon"/>
       </div>
       {renderClidren()}
     </li>

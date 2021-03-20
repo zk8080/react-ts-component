@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2021-01-24 13:13:34
- * @LastEditTime: 2021-01-24 21:07:09
- * @LastEditors: your name
+ * @LastEditTime: 2021-03-18 21:08:28
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vikingship/src/index.tsx
  */
@@ -11,6 +11,9 @@ import ReactDOM from 'react-dom';
 import './styles/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas);
 
 ReactDOM.render(
   <React.StrictMode>

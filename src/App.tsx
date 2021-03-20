@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-24 13:13:34
- * @LastEditTime: 2021-03-02 22:03:48
+ * @LastEditTime: 2021-03-18 21:11:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vikingship/src/App.tsx
@@ -11,11 +11,13 @@ import Button from './components/Button/button';
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
 import SubMenuItem from './components/Menu/subMenuItem';
+import Icon from './components/Icon/icon';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Icon icon="apple-alt" theme="danger" size="9x"/>
         <Menu defaultIndex={'0'} mode="vertical" defaultOpenSubMenus={['3']}>
           <MenuItem>menu</MenuItem>
           <MenuItem disabled>menu1</MenuItem>
