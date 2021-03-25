@@ -50,10 +50,12 @@
     }
   }
   .viking-submenu {
-    display: none;
+    // display: none;
     list-style:none;
     padding-left: 0;
     white-space: nowrap;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
     //transition: $menu-transition;
     .menu-item {
       padding: $menu-item-padding-y $menu-item-padding-x;
@@ -67,6 +69,7 @@
   }
   .viking-submenu.menu-opened {
     display: block;
+    opacity: 1;
   }
 }
 .menu-horizontal {

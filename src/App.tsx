@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-24 13:13:34
- * @LastEditTime: 2021-03-18 21:11:56
+ * @LastEditTime: 2021-03-20 21:46:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vikingship/src/App.tsx
@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Icon icon="apple-alt" theme="danger" size="9x"/>
-        <Menu defaultIndex={'0'} mode="vertical" defaultOpenSubMenus={['3']}>
+        <Menu defaultIndex={'0'} defaultOpenSubMenus={['3']}>
           <MenuItem>menu</MenuItem>
           <MenuItem disabled>menu1</MenuItem>
           <MenuItem>menu2</MenuItem>

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-01 22:32:11
- * @LastEditTime: 2021-03-20 21:43:39
+ * @LastEditTime: 2021-03-25 22:26:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vikingship/src/components/Menu/subMenuItem.tsx
@@ -11,6 +11,7 @@ import classNames from 'classnames';
 import { MenuContext } from './menu';
 import { MenuItemProps } from './menuItem';
 import Icon from '../Icon/icon';
+import Transition from '../Transition/index';
 
 export interface SubMenuItemProps {
   index?: string;
@@ -53,7 +54,7 @@ const SubMenuItem: FC<SubMenuItemProps> = (props) => {
   } : {};
 
   const renderClidren = () => {
-    const submenuClasses = classNames('viking-submenu', {
+    const subMenuClasses = classNames('viking-submenu', {
       'menu-opened': menuOpen
     })
     const childrenComponent = React.Children.map(children, (child, i) => {
@@ -67,9 +68,15 @@ const SubMenuItem: FC<SubMenuItemProps> = (props) => {
       }
     });
     return (
-      <ul className={submenuClasses}>
-        {childrenComponent}
-      </ul>
+      <Transition
+        in={menuOpen}
+        timeout={300}
+        animation="zoom-in-top"
+      >
+        <ul className={subMenuClasses}>
+          {childrenComponent}
+        </ul>
+      </Transition>
     )
   }
   return (
