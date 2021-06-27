@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-24 13:13:34
- * @LastEditTime: 2021-03-20 21:46:43
+ * @LastEditTime: 2021-06-27 20:39:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /vikingship/src/App.tsx
@@ -12,6 +12,7 @@ import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
 import SubMenuItem from './components/Menu/subMenuItem';
 import Icon from './components/Icon/icon';
+import Input from './components/Input/input';
 
 function App() {
   return (
@@ -53,6 +54,14 @@ function App() {
         >
           百度Link
         </Button>
+        <Input
+          size='sm'
+          defaultValue="测试"
+          value="测试123"
+          icon="angle-left"
+          prepend="前缀"
+          append="后缀"
+        ></Input>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
